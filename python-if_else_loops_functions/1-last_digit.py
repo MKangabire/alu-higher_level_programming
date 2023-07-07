@@ -4,7 +4,7 @@ number = random.randint(-10000, 10000)
 
 
 def num(x):
-    y = abs(x) % 10 
+    y = abs(x) % 10
     if x < 0:
         y *= -1
     if (y >= 6):
