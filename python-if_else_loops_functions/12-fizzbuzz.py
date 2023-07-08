@@ -9,3 +9,4 @@ def fizzbuzz(x):
             print("Buzz", end=" ")
         else:
             print(num, end=" ")
+fizzbuzz(98)
