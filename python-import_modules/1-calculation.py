@@ -1,15 +1,19 @@
 #!/usr/bin/python3
 from calculator_1 import *
+
+
 def main():
     a = 10
     b = 5
-    result = add(a, b)
-    result1 = sub(a, b)
-    result2 = mul(a, b)
-    result3 = div(a, b)
+    result = a + b
+    result1 = a - b
+    result2 = a * b
+    result3 = a / b
     print("{} + {} = {}".format(a, b, result))
     print("{} - {} = {}".format(a, b, result1))
     print("{} * {} = {}".format(a, b, result2))
     print("{} / {} = {}".format(a, b, result3))
+
+
 if __name__ = "__main__":
     main()
