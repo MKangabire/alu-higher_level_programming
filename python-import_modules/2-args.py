@@ -9,6 +9,5 @@ if __name__ == "__main__":
     if argc == 0:
         print("")
     else:
-        print()
         for i, arg in enumerate(argv, 1):
             print("{}: {}".format(i, arg))
