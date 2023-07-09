@@ -1,12 +1,21 @@
 #!/usr/bin/python3
-import marshal
 
-if __name__ == "__main__":
-    with open("hidden_4.pyc", "rb") as file:
-        code = marshal.load(file)
+import types
+import dis
+import importlib.util
 
-    names = [name for name in code.co_names if not name.startswith("__")]
 
-    for name in sorted(names):
-        print(name)
+spec = importlib.util.spec_from_file_location("hidden_4", "/path/to/hidden_4.pyc")
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+
+names = dir(module)
+
+names = [name for name in names if not name.startswith("__")]
+
+names.sort()
+
+for name in names:
+    print(name)
+```
 
