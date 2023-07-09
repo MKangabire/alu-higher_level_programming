@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-import dis
+import marshal
 
 if __name__ == "__main__":
     with open("hidden_4.pyc", "rb") as file:
-        bytecode = file.read()
+        code = marshal.load(file)
 
-    code = dis.Bytecode.from_code(bytecode)
-    names = set()
-
-    for instruction in code:
-        if instruction.opname == "LOAD_GLOBAL" and not instruction.argval.startswith("__"):
-            names.add(instruction.argval)
+    names = [name for name in code.co_names if not name.startswith("__")]
 
     for name in sorted(names):
         print(name)
+
