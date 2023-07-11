@@ -1,19 +1,24 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import types
-    import dis
-    import importlib.util
+import dis
+import types
 
+def print_names():
+    with open('hidden_4.pyc', 'rb') as file:
+        magic = file.read(4)
+        timestamp = file.read(4)
+        code_object = types.CodeType.from_bytes(file.read())
 
-    spec = importlib.util.spec_from_file_location("hidden_4", "/path/to/hidden_4.pyc")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    instructions = dis.Bytecode(code_object)
+    names = set()
 
-    names = dir(module)
+    for instruction in instructions:
+        if instruction.opname == 'LOAD_NAME':
+            name = instruction.argval
+            if not name.startswith('__'):
+                names.add(name)
 
-    names = [name for name in names if not name.startswith("__")]
-
-    names.sort()
-
-    for name in names:
+    for name in sorted(names):
         print(name)
+
+if __name__ == '__main__':
+    print_names()
