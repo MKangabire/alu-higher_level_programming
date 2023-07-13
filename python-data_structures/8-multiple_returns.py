@@ -2,7 +2,7 @@
 def multiple_returns(sentence):
     first_letter =  sentence[0]
     length = len(sentence)
-    if sentence == 0:
-        sentence[0] == None
+    if len(sentence) == 0:
+        return None
     else:
-       print("{:d}, {}".format(ord(first_letter), length))
+       return (ord(first_letter), length)
