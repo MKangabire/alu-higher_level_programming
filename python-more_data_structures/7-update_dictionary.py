@@ -7,4 +7,3 @@ def update_dictionary(a_dictionary, key, value):
         sorted_keys = sorted(a_dictionary.keys())
         for key in sorted_keys:
             print(key + ":", a_dictionary[key])
-
