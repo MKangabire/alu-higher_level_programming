@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-???????
+this is n oop that presents rectangles
 """
 
 
