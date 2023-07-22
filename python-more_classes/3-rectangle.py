@@ -52,4 +52,5 @@ class Rectangle:
         return rectangle_str.rstrip()
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "<{} object at {}>".format(self.__class__.__name__, hex(id(self)))
+
