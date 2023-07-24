@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 """
-this is n oop that presents rectangles.
+This is a python script that
+creates a class with attributes
+and method.
 """
 
 
 class Rectangle:
     """
-    >>>>>>>>>>>>>>>
+    this is a class that
+    has private instance atrributes,
+    getters, and setters, and a method
+    for initialization.
     """
     def __init__(self, width=0, height=0):
         self.__width = width
