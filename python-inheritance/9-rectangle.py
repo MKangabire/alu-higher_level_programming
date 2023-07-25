@@ -6,7 +6,7 @@
 
 class BaseGeometry:
     """
-    ??????????????
+    ...............
     """
 
     def integer_validator(self, value):
