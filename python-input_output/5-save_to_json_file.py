@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this is a script that writes an Object to a text file, using a JSON representation
+this is a script that writes an Object to a text file
 """
 
 
