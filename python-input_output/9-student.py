@@ -25,7 +25,7 @@ def class_to_json(obj):
         elif isinstance(value, (tuple, set)):
             json_dict[key] = list(value)
         elif isinstance(value, object):
-            json_dict[key] = class_to_json(value)
+            json_dict[key] = value.class_to_json()
 
     return json_dict
 
