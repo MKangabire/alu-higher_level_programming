@@ -6,5 +6,4 @@ class BaseGeometry:
     """
     ...................
     """
-    def base_geometry(self):
-        pass
+    pass
