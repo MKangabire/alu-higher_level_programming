@@ -5,16 +5,10 @@
 
 
 class BaseGeometry:
+    """
+    .......
+    """
     def integer_validator(self, value):
-        """
-        Validate if the given value is an integer.
-
-        Args:
-            value (int): The value to be validated.
-
-        Returns:
-            bool: True if the value is an integer, False otherwise.
-        """
         try:
             int_value = int(value)
             return True
