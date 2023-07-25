@@ -6,13 +6,9 @@ a script that returns the dict description with simple data structure
 
 def class_to_json(obj):
     """
-    Convert an instance of a Class to a dictionary representation suitable for JSON serialization.
-
+    Convert an instance of a Class to a dictionary representation
     Args:
-        obj: An instance of a Class.
-
-    Returns:
-        dict: A dictionary representation of the object suitable for JSON serialization.
+        obj: An instance of a for JSON serialization.
     """
 
     json_dict = {}
@@ -26,4 +22,3 @@ def class_to_json(obj):
             json_dict[key] = class_to_json(value)
 
     return json_dict
-
