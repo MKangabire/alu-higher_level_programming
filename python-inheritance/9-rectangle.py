@@ -8,6 +8,7 @@ class BaseGeometry:
     """
     ??????????????
     """
+
     def integer_validator(self, value):
         try:
             int_value = int(value)
