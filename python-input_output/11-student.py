@@ -23,14 +23,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        Retrieve a dictionary representation of a Student instance.
-
-        Args:
-            attrs (list): A list of attribute names to include in the dictionary representation.
-                          If None, all attributes will be included.
-
-        Returns:
-            dict: A dictionary representation of the Student instance.
+        Retrieve a dictionary representation of a Studen
         """
         # If attrs is None, include all attributes
         if attrs is None:
@@ -41,27 +34,23 @@ class Student:
 
         # Loop through the attributes of the instance
         for key, value in self.__dict__.items():
-            # Check if the attribute name is in the attrs list
             if key in attrs:
-                # Check if the attribute value is serializable (list, dictionary, string, integer, or boolean)
                 if isinstance(value, (list, dict, str, int, bool)):
                     json_dict[key] = value
-                elif isinstance(value, (tuple, set)):  # Handle tuples and sets by converting them to lists
+                elif isinstance(value, (tuple, set)):
                     json_dict[key] = list(value)
-                elif isinstance(value, object):  # Recursively convert nested objects to JSON representations
+                elif isinstance(value, object):
                     json_dict[key] = self.class_to_json(value)
 
         return json_dict
 
     def reload_from_json(self, json):
         """
-        Replace all attributes of the Student instance based on the provided dictionary representation.
+        Replace all attributes of the Student instance based on the
 
-        Args:
-            json (dict): A dictionary containing attribute names and their corresponding values.
+containing attribute names and their corresponding values.
         """
         # Loop through the items in the json dictionary
         for key, value in json.items():
             # Set the attribute with the corresponding value
             setattr(self, key, value)
-
