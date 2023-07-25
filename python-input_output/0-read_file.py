@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-this a pythohon script that reads a file
+this a python script that reads a file
 """
 
 
 def read_file(filename=""):
     """
-    it reads a file
+    it reads and printsthe content of a file
     """
     with open(filename, mode='r', encoding='utf-8') as myfile:
-        print(myfile.read())
+        content = myfile.read().rstrip('\n')
+        print(content)
