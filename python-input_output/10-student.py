@@ -40,4 +40,3 @@ class Student:
                     json_dict[key] = self.class_to_json(value)
 
         return json_dict
-
