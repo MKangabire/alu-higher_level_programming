@@ -6,7 +6,7 @@ this is a script hecks if the width and height
 
 class BaseGeometry:
     """
-    ...........
+    this is a class
     """
     def integer_validator(self, value):
         try:
