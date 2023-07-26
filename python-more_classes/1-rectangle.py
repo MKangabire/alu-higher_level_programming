@@ -40,9 +40,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
-    def get_width(self):
-        return self.__width
-
-    def get_height(self):
-        return self.__height
