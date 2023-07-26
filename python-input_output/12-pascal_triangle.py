@@ -11,7 +11,7 @@ def pascal_triangle(n):
     lists = []
     if n <= 0:
         return lists
-    
+
     lists.append([1])
 
     for i in range(1, n):
