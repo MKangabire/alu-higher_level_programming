@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-a python script that returns true if the object is an instance of a class that is inherited
+a script that returns true if the object is an instance of the onherited clas
 """
 
 
