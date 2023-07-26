@@ -21,7 +21,7 @@ def pascal_triangle(n):
         for j in range(1, i):
             current_row.append(prev_row[j - 1] + prev_row[j])
 
-            current_row.append(1)
-            lists.append(current_row)
+        current_row.append(1)
+        lists.append(current_row)
 
     return lists
