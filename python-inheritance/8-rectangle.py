@@ -17,6 +17,9 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """
+    .........
+    """
     def __init__(self, width, height):
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
