@@ -31,4 +31,4 @@ class Rectangle(BaseGeometry):
                 self.__width = width
                 self.__height = height
             else:
-                raise ValueError("width and must be positive integers")
+                raise ValueError("width must be greater than 0")
