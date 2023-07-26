@@ -28,8 +28,6 @@ class Rectangle(BaseGeometry):
                 self.__height = height
             else:
                 raise ValueError("Width and height must be positive integers")
-        else:
-            raise ValueError("Width and height must be positive integers")
     def area(self):
         return self.__width * self.__height
 
