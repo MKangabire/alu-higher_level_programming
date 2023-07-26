@@ -2,7 +2,7 @@
 """
 This is a python script that
 creates a class with attributes
-and method.
+and method
 """
 
 
@@ -41,8 +41,8 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-     def get_width(self):
-         return self.__width
+    def get_width(self):
+        return self.__width
 
-     def get_height(self):
-         return self.__height
+    def get_height(self):
+        return self.__height
