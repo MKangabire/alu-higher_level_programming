@@ -17,6 +17,9 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """
+    .......
+    """
     def __init__(self, width, height):
         """
         Initialize a Rectangle object.
