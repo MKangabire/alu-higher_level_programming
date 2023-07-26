@@ -18,12 +18,14 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+
         if self.integer_validator(width) and self.integer_validator(height):
             if width > 0 and height > 0:
                 self.__width = width
                 self.__height = height
             else:
                 raise ValueError("Width and height must be positive integers")
-        else:
-            raise ValueError("Width and height must be positive integers")
-
