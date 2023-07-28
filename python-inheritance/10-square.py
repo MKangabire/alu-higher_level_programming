@@ -1,71 +1,28 @@
 #!/usr/bin/python3
+# 10-base_geometry.py
+"""A python module
+that creates an empty
+class
 """
-..................
-"""
 
 
-class BaseGeometry:
-    """
-    .......
-    """
-    def integer_validator(self, value):
-        try:
-            int_value = int(value)
-            return True
-        except ValueError:
-            return False
-
-
-class Rectangle(BaseGeometry):
-    """
-    .......
-    """
-    def __init__(self, width, height):
-        """
-        Initialize a Rectangle object.
-
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-
-        Raises:
-            ValueError: If width or height is not a positive integer.
-        """
-        if self.integer_validator(width) and self.integer_validator(height):
-            if width > 0 and height > 0:
-                self.__width = width
-                self.__height = height
-            else:
-                raise ValueError("Width and height must be positive integers")
-        else:
-            raise ValueError("Width and height must be positive integers")
-
-    def area(self):
-        """
-        Calculate and return the area of the rectangle.
-
-        Returns:
-            int: The area of the rectangle.
-        """
-        return self.__width * self.__height
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
+    """This is a class Square
+    that inherits from the
+    class Rectangle and indirectly
+    from the class BaseGeometry
+    """
     def __init__(self, size):
+        """The initialization method for
+        the class Square
         """
-        Initialize a Square object.
+        self.__size = self.integer_validator("size", size)
 
-        Args:
-            size (int): The size of the square.
+    def area(self):
+        return self.__size * self.__size
 
-        Raises:
-            ValueError: If size is not a positive integer.
-        """
-        if self.integer_validator(size):
-            if size > 0:
-                super().__init__(size, size)
-            else:
-                raise ValueError("Size must be a positive integer")
-        else:
-            raise ValueError("Size must be a positive integer")
-
+    def __str__(self):
+        return f"[Rectangle] {self.__size}/{self.__size}"
