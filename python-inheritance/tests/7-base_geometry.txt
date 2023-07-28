@@ -1,5 +1,61 @@
-my_int:12
-width:89
-name:John
-age:0
-distance:-4
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry(do_print=True)
+
+>>> try:
+... 	bg.area()
+... except Exception as e:
+... 	value = str(e)
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     value = str(e)
+>>> try:
+...     bg.integer_validator("age")
+... except Exception as e:
+...     value = str(e)
+>>> bg1 = BaseGeometry(do_print=True)
+>>> try:
+...     bg1.integer_validator("age", 1)
+... except Exception as e:
+...     value = str(e)
+>>> bg2 = BaseGeometry(do_print=True)
+>>> try:
+...     bg2.integer_validator("age", 0)
+... except Exception as e:
+...     value = str(e)
+>>> bg3 = BaseGeometry(do_print=True)
+>>> try:
+...     bg3.integer_validator("age", -4)
+... except Exception as e:
+...     value = str(e)
+>>> bg4 = BaseGeometry(do_print=True)
+>>> try:
+...     bg4.integer_validator("age", "4")
+... except Exception as e:
+...     value = str(e)
+>>> bg5 = BaseGeometry(do_print=True)
+>>> try:
+...     bg5.integer_validator("age", (4,))
+... except Exception as e:
+...     value = str(e)
+>>> bg6 = BaseGeometry(do_print=True)
+>>> try:
+...     bg6.integer_validator("age", [3])
+... except Exception as e:
+...     value = str(e)
+>>> bg7 = BaseGeometry(do_print=True)
+>>> try:
+...     bg7.integer_validator("age", True)
+... except Exception as e:
+...     value = str(e)
+>>> bg8 = BaseGeometry(do_print=True)
+>>> try:
+...     bg8.integer_validator("age", {3, 4})
+... except Exception as e:
+...     value = str(e)
+>>> bg9 = BaseGeometry(do_print=True)
+>>> try:
+...     bg9.integer_validator("age", None)
+... except Exception as e:
+...     value = str(e)
