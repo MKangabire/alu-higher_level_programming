@@ -13,9 +13,9 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-def class_to_json(obj):
-    """
-    Convert an instance of a Class to a dictionary representation
-    """
-    loads = self.__dict__
-    return loads
+    def to_json(self):
+        """
+        Convert an instance of a Class to a dictionary representation
+        """
+        loads = self.__dict__
+        return loads
