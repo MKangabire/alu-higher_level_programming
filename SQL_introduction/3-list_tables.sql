@@ -1,4 +1,5 @@
 -- lists all the tables in the tables
 
-USE mysql
-SHOW TABLES;
+SELECT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_SCHEMA LIKE '%';
