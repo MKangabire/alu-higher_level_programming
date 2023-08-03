@@ -1,3 +1,3 @@
 #!/bin/bash
 # takes an argument URL and displays all allowed methods
-curl -sIX OPTIONS "$1" | sed -En "s/Allow: (.*)$/\1/p"
+curl -sI -X OPTIONS "$1" | grep -i allow | cut -d ' ' -f 2-
