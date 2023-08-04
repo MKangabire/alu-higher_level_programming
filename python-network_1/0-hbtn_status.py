@@ -1,24 +1,14 @@
 #!/usr/bin/python3
-'''This script fetches the status information from the URL
- 'https://alu-intranet.hbtn.io/status' and prints the results in a formatted way.
+"""Python script that fetches https://alu-intranet.hbtn.io/status"""
 
-Dependencies:
-- requests library (install using 'pip install requests')
 
-Usage:
-python fetch_status.py
-
-Example Output:
-'''
 import urllib.request
 
-if __name__ == "__main__":
-    '''Something here
-    '''
-    url = 'https://alu-intranet.hbtn.io/status'
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        data = response.read()
-        info = f"Body response:\n\t- type: {type(data)}\n\t- \
-content: {data}\n\t- utf8 content: {data.decode('utf-8')}"
-        print(info)
+
+if __name__ == '__main__':
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+        content = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content))
+        print("\t- utf8 content: {}".format(content.decode("utf-8")))
