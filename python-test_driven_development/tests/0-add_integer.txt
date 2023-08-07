@@ -1,36 +1,30 @@
-Test Cases for add_integer Function
------------------------------------
-
-1. Test adding two integers:
-Input: add_integer(5, 3)
-Expected Output: 8
-
-Input: add_integer(-5, 7)
-Expected Output: 2
-
-Input: add_integer(0, 0)
-Expected Output: 0
-
-2. Test adding integer and float:
-Input: add_integer(3.5, 2)
-Expected Output: 5
-
-Input: add_integer(7, 2.5)
-Expected Output: 9
-
-Input: add_integer(3.8, 2.7)
-Expected Output: 6
-
-3. Test invalid input:
-Input: add_integer("5", 3)
-Expected Output: TypeError
-
-Input: add_integer(5, "3")
-Expected Output: TypeError
-
-Input: add_integer("hello", 3.5)
-Expected Output: TypeError
-
-Input: add_integer(5.5, "world")
-Expected Output: TypeError
-
+"""
+>>> add_integer(5, 3)
+8
+>>> add_integer(-5, 7)
+2
+>>> add_integer(0, 0)
+0
+>>> add_integer(3.5, 2)
+5
+>>> add_integer(7, 2.5)
+9
+>>> add_integer(3.8, 2.7)
+6
+>>> add_integer("5", 3)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or b must be an integer
+>>> add_integer(5, "3")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or b must be an integer
+>>> add_integer("hello", 3.5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or b must be an integer
+>>> add_integer(5.5, "world")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or b must be an integer
+"""
