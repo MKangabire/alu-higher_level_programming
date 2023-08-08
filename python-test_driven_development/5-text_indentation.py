@@ -4,7 +4,7 @@ e a function that prints a text with 2 new lines after each of these character
 """
 
 
-def text_identation(text):
+def text_indentation(text):
     """
     prints a text with 2 new lines after each of these characters: ., ? and :
     """
