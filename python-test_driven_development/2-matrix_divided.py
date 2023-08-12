@@ -13,7 +13,8 @@ def matrix_divided(matrix, div):
                 all(isinstance(element, (int, float))
                     for element in row)
                 for row in matrix)):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists) \
+                    of integers/floats")
 
     row_size = len(matrix[0])
     if not all(len(row) == row_size for row in matrix):
