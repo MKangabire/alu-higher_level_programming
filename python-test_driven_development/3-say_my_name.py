@@ -6,9 +6,9 @@ a function that prints My name is <first name> <last name>
 
 def say_my_name(first_name, last_name=""):
     """
-    prints the name 
+    prints the name
     """
-    try:        
+    try:
         if not isinstance(first_name, str):
             raise TypeError("first_name must be a string")
         if not isinstance(last_name, str):
@@ -16,4 +16,4 @@ def say_my_name(first_name, last_name=""):
     except TypeError:
         raise
     else:
-         return print("My name is {} {}".format(first_name, last_name)) 
+        return print("My name is {} {}".format(first_name, last_name))
