@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-a script that 
+a script that
 """
+
 
 class Base:
     """
