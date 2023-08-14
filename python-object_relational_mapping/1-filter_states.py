@@ -23,8 +23,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     query = ("SELECT * FROM states "
-            "WHERE BINARY name LIKE 'N%' "
-            "ORDER BY states.id")
+             "WHERE BINARY name LIKE 'N%' "
+             "ORDER BY states.id")
     cursor.execute(query)
 
     rows = cursor.fetchall()
