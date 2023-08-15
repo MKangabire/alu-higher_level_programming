@@ -25,7 +25,7 @@ if __name__ == "__main__":
     query = (f"SELECT * FROM states "
              f"WHERE name = '{name_argument}' "
              "ORDER BY states.id")
-    cursor.execute(query, (name_argument,))
+    cursor.execute(query)
 
     if not rows:
         print("No matching states found.")
