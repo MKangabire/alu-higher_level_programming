@@ -22,9 +22,9 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
 
-    query = (f"SELECT * FROM states "
-             f"WHERE name = '{name_argument}' "
-             "ORDER BY states.id")
+    query = ("SELECT * FROM states "
+             "WHERE name = '{}' "
+             "ORDER BY states.id").format(name_argument)
     cursor.execute(query)
 
     if not rows:
