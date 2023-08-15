@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+"""
+a script that takes in an argument and displays all values in the states tabl
+"""
+
 import MySQLdb
 import sys
 
