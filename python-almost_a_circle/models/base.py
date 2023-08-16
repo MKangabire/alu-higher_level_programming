@@ -40,39 +40,41 @@ class Base:
         @classmethod
         def save_to_file(cls, list_objs):
             """
-        the class method def save_to_file(cls, list_objs)
+            the class method def save_to_file(cls, list_objs)
 
-        that writes the JSON string representation of list_objs to a file
+            that writes the JSON string representation of list_objs to a file
 
-        list_objs is a list of instances who inherits of Base
+            list_objs is a list of instances who inherits of Base
 
-        example: list of Rectangle or list of Square instances
+            example: list of Rectangle or list of Square instances
 
-        If list_objs is None, save an empty list
+            If list_objs is None, save an empty list
 
-        The filename must be: <Class name>.json - example: Rectangle.json
+            The filename must be: <Class name>.json - example: Rectangle.json
 
-        You must use the static method to_json_string (created before)
-        You must overwrite the file if it already exists
-        """
-        if list_objs is None:
-            data = cls.to_json_string(list_objs)
-            data = json.loads(data)
-            with open(f"{cls.__name__}.json", mode='w', encoding="utf-8") as \
-                    classfile:
-                 json.dump(data, classfile)
-                 return 1
-             else:
-                 new_list_objs = []
-                 for i in range(len(list_objs)):
-                     hash_maps = list_objs[i].to_dictionary()
-                     new_list_objs.append(hash_maps)
-                 data = cls.to_json_string(new_list_objs)
-                 data = json.loads(data)
-                 with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") \
-                    as classfile:
+            You must use the static method to_json_string (created before)
+            You must overwrite the file if it already exists
+            """
+            if list_objs is None:
+                data = cls.to_json_string(list_objs)
+                data = json.loads(data)
+                with open(f"{cls.__name__}.json", mode='w', encoding="utf-8") \
+                        as classfile:
+
                     json.dump(data, classfile)
-                 return 0
+                    return 1
+            else:
+
+                new_list_objs = []
+                for i in range(len(list_objs)):
+                    hash_maps = list_objs[i].to_dictionary()
+                    new_list_objs.append(hash_maps)
+                data = cls.to_json_string(new_list_objs)
+                data = json.loads(data)
+                with open(f"{cls.__name__}.json", mode="w", encoding="utf-8") \
+                        as classfile:
+                    json.dump(data, classfile)
+                    return 0
 
     @staticmethod
     def from_json_string(json_string):
