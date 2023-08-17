@@ -29,7 +29,7 @@ def search_states(username, password, db_name, state_name):
             print("No matching states found.")
         else:
             for row in rows:
-                print(row)
+                print(row[0], "'{}'".format(row[1]))
 
         cursor.close()
         db.close()
