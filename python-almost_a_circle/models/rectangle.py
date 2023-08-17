@@ -16,6 +16,18 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def validation(self, name, value):
+        if not isinstance(value, int):
+            raise TypeError(f"{name} be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
+    def validate_negative(self, name, value):
+        if not isinstance(value, int):
+            raise ValueError(f"{name} must be an integer")
+        if value < 0:
+            raise ValueError(f"{name} must be >=0")
+
     @property
     def width(self):
         return self.__width
@@ -47,3 +59,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         self.__y = value
+
+    def validation(self, name, value):
+        if not isinstance(value, int):
+            raise TypeError(f"{name} be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be > 0")
+
+    def validate_negative(self, name, value):
+        if not isinstance(value, int):
+            raise ValueError(f"{name} must be an integer")
+        if value < 0:
+            raise ValueError(f"{name} must be >=0")
