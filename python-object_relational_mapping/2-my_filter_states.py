@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     query = ("SELECT * FROM states "
              "WHERE name = '{}' "
-             "ORDER BY states.id").format(name_argument)
+             "ORDER BY states.id").format(states_name)
     cursor.execute(query)
 
     if not rows:
