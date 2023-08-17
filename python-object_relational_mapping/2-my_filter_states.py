@@ -19,7 +19,7 @@ import sys
 
             query = ("SELECT * FROM states "
                      "WHERE name = '{}' "
-                     "ORDER BY states.id").format(states_name)
+                     "ORDER BY states.id").format(state_name)
             cursor.execute(query)
 
             if not rows:
