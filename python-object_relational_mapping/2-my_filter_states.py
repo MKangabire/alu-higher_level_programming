@@ -21,15 +21,15 @@ def search_states(username, password, db_name, state_name):
         cursor = db.cursor()
 
         query = ("SELECT * FROM states "
-                 "WHERE name = '{}' "
-                 "ORDER BY states.id").format(state_name)
-        cursor.execute(query)
+                 "WHERE name = %s "
+                 "ORDER BY states.id")
+        cursor.execute(query, (state_name,))
 
         if not rows:
             print("No matching states found.")
         else:
             for row in rows:
-                print(row[0], "'{}'".format(row[1]))
+                print("({}, '{}')".format(row[0], row[1]))
 
         cursor.close()
         db.close()
