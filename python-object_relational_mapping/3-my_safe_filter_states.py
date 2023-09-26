@@ -1,43 +1,17 @@
 #!/usr/bin/python3
-"""
-a script that takes in arguments and displays all values in the states table
-"""
-
+''' lists all states with a name matching with specific name
+ from the database hbtn_0e_0_usa (sql injection safe)
+'''
 import MySQLdb
 import sys
 
-
-def search_states(username, password, db_name, state_name):
-    try:
-        
-        db = MySQLdb.connect(
-                host='localhost',
-                port=3306,
-                user=username,
-                passwd=password,
-                db=db_name)
-
-        cursor = db.cursor()
-
-        query = "SELECT * FROM states WHERE name = %s ORDER BY id"
-        cursor.execute(query, (state_name,))
-
-        results = cursor.fetchall()
-
-        for row in results:
-            print(row)
-
-        cursor.close()
-        db.close()
-        
-    except MySQLdb.Error as e:
-        print("Error:", e)
-        sys.exit(1)
-
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: python script.py <mysql_username> <mysql_password>"
-              "<db_name> <state_name>")
-        sys.exit(1)
-
-
+    db = MySQLdb.connect(host="localhost", port=3306, db=sys.argv[3],
+                         user=sys.argv[1], passwd=sys.argv[2])
+    c = db.cursor()
+    c.execute(
+        "SELECT * FROM states WHERE states.name = %s ORDER BY states.id ASC",
+        (sys.argv[4],)
+    )
+    for row in c.fetchall():
+        print(row)

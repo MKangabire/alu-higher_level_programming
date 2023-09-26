@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''lists all cities and their corresponding states
+'''lists all cities filtered by their corresponding states
 from hbtn_0e_0_usa
 '''
 import MySQLdb
@@ -11,7 +11,9 @@ if __name__ == "__main__":
     c = db.cursor()
     c.execute(
         '''SELECT cities.id, cities.name, states.name FROM cities INNER JOIN'''
-        + ''' states ON cities.state_id = states.id ORDER BY cities.id ASC'''
+        + ''' states ON cities.state_id = states.id WHERE states.name = %s'''
+        + ''' ORDER BY cities.id ASC''',
+        (sys.argv[4],)
     )
-    for row in c.fetchall():
-        print(row)
+    result = [item[1] for item in c.fetchall()]
+    print(", ".join(result))
