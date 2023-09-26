@@ -1,3 +1,3 @@
 #!/usr/bin/node
-let name='JavaScript is amazing';
-console.log(name);
+let names='JavaScript is amazing';
+console.log(names);
