@@ -6,8 +6,7 @@ const result = {};
 for (const [key, value] of Object.entries(dict)) {
   if (result[value] === undefined) {
     result[value] = [key];
-  }
-  else {
+  } else {
     result[value].push(key);
   }
 }

@@ -8,6 +8,6 @@ fs.readFile(process.argv[2], (errA, dataA) => {
     if (errB) throw errB;
     fs.writeFile(process.argv[4], dataA + dataB, (errC) => {
       if (errC) throw errC;
-      });
-   });
+    });
+  });
 });
