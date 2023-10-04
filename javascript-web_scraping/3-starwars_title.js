@@ -14,7 +14,7 @@ request(apiUrl, (error, response, body) => {
   }
   if (response.statusCode === 200) {
     const movieData = JSON.parse(body);
-    console.log(`Title: ${movieData.title}`);
+    console.log(`${movieData.title}`);
   } else {
     console.error(`Error: Status code ${response.statusCode}`);
     process.exit(1); // Exit with an error code
