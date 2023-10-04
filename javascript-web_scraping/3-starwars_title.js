@@ -1,3 +1,4 @@
+#!/usr/bin/node
 const request = require('request');
 
 if (process.argv.length < 3) {
@@ -14,8 +15,7 @@ request(apiUrl, (error, response, body) => {
   if (response.statusCode === 200) {
     const movieData = JSON.parse(body);
     console.log(`Title: ${movieData.title}`);
-  }
-  else {
+  } else {
     console.error(`Error: Status code ${response.statusCode}`);
     process.exit(1); // Exit with an error code
   }
