@@ -11,10 +11,10 @@ request.get(url, (err, resp, body) => {
     if (item.completed) {
       if (result[item.userId]) {
         result[item.userId]++;
-        } else {
-            result[item.userId] = 1;
-        }
+      } else {
+        result[item.userId] = 1;
       }
+    }
   });
   console.log(result);
 });
