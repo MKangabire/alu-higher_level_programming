@@ -12,5 +12,4 @@ if (argv[2]) {
   });
 } else {
   console.error('Usage: ./script-name.js <file-path>');
-  process.exit(1); // Exit with an error code
-}
+  process.exit(1); // Exit with an error code}
