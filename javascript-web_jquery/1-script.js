@@ -1,3 +1,3 @@
-#!/usr/bin/node
-const header = $('header');
-header.style.color = 'FF0000';
+$(function () {
+	$('header').css('color', '#FF0000');
+});
