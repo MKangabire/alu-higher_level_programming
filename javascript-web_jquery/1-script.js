@@ -1,3 +1,3 @@
 #!/usr/bin/node
-const header = document.querySelecctor('header');
+const header = $('header');
 header.style.color = 'FF0000';
